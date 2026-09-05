@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Meu Amor ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cor-principal: #0a0a0a;
+            --cor-secundaria: #1a1a1a;
+            --cor-destaque: #e91e63;
+            --cor-texto: #ffffff;
+            --cor-texto-claro: #f0f0f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            background-color: var(--cor-principal);
+            color: var(--cor-texto);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== ABERTURA ===== */
+        .abertura {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #2d0515 50%, #0a0a0a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .abertura-content {
+            text-align: center;
+            animation: slideUp 1s ease-out;
+        }
+
+        .abertura-content h1 {
+            font-size: 3rem;
+            color: var(--cor-destaque);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 30px rgba(233, 30, 99, 0.7);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .abertura-content p {
+            font-size: 1.5rem;
+            color: var(--cor-texto-claro);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .botao-abertura {
+            background: linear-gradient(135deg, var(--cor-destaque) 0%, #ff1744 100%);
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.4);
+            animation: bounce 2s infinite 0.5s;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .botao-abertura:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(233, 30, 99, 0.6);
+        }
+
+        .abertura-emoji {
+            font-size: 4rem;
+            margin-top: 2rem;
+            animation: float-emoji 2s ease-in-out infinite;
+        }
+
+        @keyframes float-emoji {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 8px 32px rgba(233, 30, 99, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--cor-destaque);
+            text-shadow: 0 0 20px rgba(233, 30, 99, 0.6);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: var(--cor-texto);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: var(--cor-destaque);
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cor-destaque), transparent);
+            transition: width 0.4s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #2d0515 30%, #1a0a15 70%, #0a0a0a 100%);
+            overflow: hidden;
+            padding: 4rem 2rem;
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, var(--cor-destaque), transparent);
+            border-radius: 50%;
+            animation: float 30s infinite;
+            opacity: 0.5;
+            box-shadow: 0 0 10px var(--cor-destaque);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .title-main {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--cor-texto);
+            text-shadow: 0 0 40px rgba(233, 30, 99, 0.5);
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            color: var(--cor-destaque);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            text-shadow: 0 0 20px rgba(233, 30, 99, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .hearts-animation {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .heart {
+            font-size: 4rem;
+            animation: heartBeat 1s infinite;
+        }
+
+        .heart:nth-child(1) { animation-delay: 0s; }
+        .heart:nth-child(2) { animation-delay: 0.3s; }
+        .heart:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.4); }
+            50% { transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== CONTADOR SECTION ===== */
+        .contador-section {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            color: var(--cor-destaque);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(233, 30, 99, 0.4);
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--cor-texto-claro);
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+
+        .contador-completo {
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.1) 0%, rgba(255, 23, 68, 0.05) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid var(--cor-destaque);
+            margin-bottom: 3rem;
+            font-size: 1.4rem;
+            color: var(--cor-texto-claro);
+            box-shadow: 0 8px 32px rgba(233, 30, 99, 0.15);
+        }
+
+        .contador-completo .numero {
+            color: var(--cor-destaque);
+            font-weight: 800;
+            font-size: 1.8rem;
+        }
+
+        .contador-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+
+        .contador-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 100%);
+            padding: 2.5rem 1.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--cor-destaque);
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contador-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(233, 30, 99, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .contador-card:hover::before {
+            left: 100%;
+        }
+
+        .contador-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(233, 30, 99, 0.3);
+            border-color: #ff1744;
+        }
+
+        .contador-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--cor-destaque);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(233, 30, 99, 0.3);
+        }
+
+        .contador-label {
+            font-size: 1rem;
+            color: var(--cor-texto-claro);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        /* ===== 6 COISAS SECTION ===== */
+        .coisas-section {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 4rem 2rem;
+        }
+
+        .coisas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .coisa-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--cor-destaque);
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.15);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .coisa-card:hover {
+            transform: scale(1.08) translateY(-15px);
+            box-shadow: 0 20px 60px rgba(233, 30, 99, 0.35);
+            border-color: #ff1744;
+        }
+
+        .coisa-numero {
+            background: linear-gradient(135deg, var(--cor-destaque) 0%, #ff1744 100%);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-weight: 900;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4);
+        }
+
+        .coisa-titulo {
+            color: var(--cor-destaque);
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .coisa-texto {
+            color: var(--cor-texto-claro);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* ===== VOCÊ SABIA SECTION ===== */
+        .sabia-section {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 4rem 2rem;
+        }
+
+        .sabia-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .sabia-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--cor-destaque);
+            border-top: 2px solid rgba(233, 30, 99, 0.3);
+            border-right: 2px solid rgba(233, 30, 99, 0.3);
+            border-bottom: 2px solid rgba(233, 30, 99, 0.3);
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .sabia-card:hover {
+            transform: translateX(15px);
+            box-shadow: 0 15px 50px rgba(233, 30, 99, 0.3);
+            border-left-color: #ff1744;
+        }
+
+        .sabia-texto {
+            color: var(--cor-texto-claro);
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+
+        /* ===== TIMELINE SECTION ===== */
+        .timeline-section {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 4rem 2rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--cor-destaque) 0%, rgba(233, 30, 99, 0.3) 50%, transparent 100%);
+            box-shadow: 0 0 15px rgba(233, 30, 99, 0.4);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: auto;
+            width: calc(50% - 40px);
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+            width: calc(50% - 40px);
+            text-align: left;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 28px;
+            height: 28px;
+            background: var(--cor-destaque);
+            border: 4px solid var(--cor-principal);
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(233, 30, 99, 0.6);
+        }
+
+        .timeline-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid var(--cor-destaque);
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            box-shadow: 0 15px 50px rgba(233, 30, 99, 0.35);
+        }
+
+        .timeline-data {
+            color: var(--cor-destaque);
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 10px rgba(233, 30, 99, 0.3);
+        }
+
+        .timeline-descricao {
+            color: var(--cor-texto-claro);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* ===== MUSICAS SECTION ===== */
+        .musicas-section {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .musicas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .musica-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid var(--cor-destaque);
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.2);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .musica-card:hover {
+            transform: scale(1.08) translateY(-15px);
+            box-shadow: 0 20px 60px rgba(233, 30, 99, 0.4);
+        }
+
+        .musica-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: float-emoji 2s ease-in-out infinite;
+        }
+
+        .musica-nome {
+            color: var(--cor-destaque);
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .musica-artista {
+            color: var(--cor-texto-claro);
+            font-size: 1.1rem;
+        }
+
+        /* ===== GALERIA DE FOTOS SECTION ===== */
+        .fotos-section {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .fotos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .foto-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 100%);
+            border-radius: 15px;
+            border: 2px solid var(--cor-destaque);
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.2);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .foto-card:hover {
+            transform: scale(1.08) translateY(-15px);
+            box-shadow: 0 20px 60px rgba(233, 30, 99, 0.4);
+            border-color: #ff1744;
+        }
+
+        .foto-imagem {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #2d1a1f 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            overflow: hidden;
+        }
+
+        .foto-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .foto-texto {
+            padding: 1.5rem;
+            color: var(--cor-texto-claro);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* ===== MOTIVO SECTION ===== */
+        .motivo-section {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .motivo-titulo {
+            font-size: 3rem;
+            color: var(--cor-destaque);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out;
+            text-shadow: 0 0 20px rgba(233, 30, 99, 0.3);
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .motivo-texto {
+            font-size: 1.8rem;
+            color: var(--cor-texto-claro);
+            line-height: 1.8;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid var(--cor-destaque);
+            animation: fadeInUp 1s ease-out 0.2s both;
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.2);
+            font-weight: 600;
+        }
+
+        /* ===== CARTA SECTION ===== */
+        .carta-section {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 4rem 2rem;
+        }
+
+        .carta-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .carta {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 100%);
+            border: 3px solid var(--cor-destaque);
+            border-radius: 20px;
+            padding: 4rem;
+            max-width: 800px;
+            box-shadow: 0 20px 60px rgba(233, 30, 99, 0.3);
+            position: relative;
+            animation: cartaAppear 1s ease-out;
+        }
+
+        @keyframes cartaAppear {
+            from {
+                opacity: 0;
+                transform: translateY(40px) rotateX(15deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .carta-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid var(--cor-destaque);
+        }
+
+        .carta-header h2 {
+            color: var(--cor-destaque);
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        .carta-body {
+            color: var(--cor-texto-claro);
+            line-height: 2;
+        }
+
+        .carta-body p {
+            margin-bottom: 1.8rem;
+            text-align: justify;
+            font-size: 1.1rem;
+        }
+
+        .assinatura {
+            color: var(--cor-destaque);
+            font-weight: 800;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        .carta-footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 3px solid var(--cor-destaque);
+        }
+
+        .carta-data {
+            color: var(--cor-destaque);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        /* ===== TELA FINAL ===== */
+        .tela-final {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #000 0%, #2d0515 50%, #000 100%);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            backdrop-filter: blur(10px);
+        }
+
+        .tela-final.ativa {
+            display: flex;
+        }
+
+        .final-content {
+            text-align: center;
+            animation: slideUp 1s ease-out;
+        }
+
+        .final-titulo {
+            font-size: 6rem;
+            color: var(--cor-destaque);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 40px rgba(233, 30, 99, 0.7);
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .final-texto {
+            font-size: 2.5rem;
+            color: var(--cor-texto-claro);
+            margin-bottom: 2.5rem;
+            line-height: 2;
+            font-weight: 300;
+            max-width: 800px;
+        }
+
+        .final-mensagem {
+            font-size: 4rem;
+            color: var(--cor-destaque);
+            animation: heartBeat 1s infinite;
+            text-shadow: 0 0 30px rgba(233, 30, 99, 0.6);
+            margin-bottom: 3rem;
+        }
+
+        .botao-voltar {
+            background: linear-gradient(135deg, var(--cor-destaque) 0%, #ff1744 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.4);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .botao-voltar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(233, 30, 99, 0.6);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+            position: relative;
+            overflow: hidden;
+            border-top: 2px solid var(--cor-destaque);
+        }
+
+        .footer p {
+            color: var(--cor-destaque);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-shadow: 0 0 10px rgba(233, 30, 99, 0.3);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .title-main {
+                font-size: 3rem;
+            }
+
+            .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .nav-menu {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 50px);
+                text-align: left;
+                margin-left: 50px;
+                margin-right: 0;
+            }
+
+            .timeline-marker {
+                left: 15px;
+            }
+
+            .carta {
+                padding: 2rem;
+            }
+
+            .final-titulo {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-main {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .contador-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .coisas-container {
+                grid-template-columns: 1fr;
+            }
+
+            .final-titulo {
+                font-size: 2.5rem;
+            }
+
+            .final-texto {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ABERTURA -->
+    <div class="abertura" id="abertura">
+        <div class="abertura-content">
+            <h1>Para a pessoa que tornou meus dias mais especiais ❤️</h1>
+            <p>Um site feito com muito amor e carinho</p>
+            <button class="botao-abertura" onclick="fecharAbertura()">Entrar ❤️</button>
+            <div class="abertura-emoji">💕</div>
+        </div>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">💕 Nosso Amor 💕</h1>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Início</a></li>
+                <li><a href="#contador" class="nav-link">Contador</a></li>
+                <li><a href="#coisas" class="nav-link">Amo Você</a></li>
+                <li><a href="#fotos" class="nav-link">Fotos</a></li>
+                <li><a href="#carta" class="nav-link">Carta</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1 class="title-main">Meu Amor Por Você</h1>
+            <p class="subtitle">Desde 6 de Abril de 2026</p>
+            <div class="hearts-animation">
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTADOR SECTION -->
+    <section id="contador" class="contador-section">
+        <h2 class="section-title">Nossos Dias Juntos</h2>
+        <div class="contador-completo">
+            Estamos juntos há <span class="numero" id="meses">0</span> meses • <span class="numero" id="dias-rest">0</span> dias • <span class="numero" id="horas">0</span> horas 💕
+        </div>
+        <div class="contador-container">
+            <div class="contador-card">
+                <div class="contador-number" id="dias">00</div>
+                <p class="contador-label">Dias</p>
+            </div>
+            <div class="contador-card">
+                <div class="contador-number" id="horas2">00</div>
+                <p class="contador-label">Horas</p>
+            </div>
+            <div class="contador-card">
+                <div class="contador-number" id="minutos2">00</div>
+                <p class="contador-label">Minutos</p>
+            </div>
+            <div class="contador-card">
+                <div class="contador-number" id="segundos2">00</div>
+                <p class="contador-label">Segundos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6 COISAS SECTION -->
+    <section id="coisas" class="coisas-section">
+        <h2 class="section-title">6 Coisas que Amo em Você</h2>
+        <div class="coisas-container">
+            <div class="coisa-card">
+                <div class="coisa-numero">1</div>
+                <div class="coisa-titulo">Sua Feminilidade</div>
+                <div class="coisa-texto">A forma que você é feminina, gentil, educada, doce e muito marrenta e ciumenta 😍❤️</div>
+            </div>
+
+            <div class="coisa-card">
+                <div class="coisa-numero">2</div>
+                <div class="coisa-titulo">Sua Boca e Sorriso</div>
+                <div class="coisa-texto">Seus lábios, seu sorriso... tudo em você é perfeito 🥰</div>
+            </div>
+
+            <div class="coisa-card">
+                <div class="coisa-numero">3</div>
+                <div class="coisa-titulo">Sua Voz</div>
+                <div class="coisa-texto">A forma que você fala, canta, sua voz de bebê, cansada, com sono, gemendo... eu amo te ouvir 😍❤️</div>
+            </div>
+
+            <div class="coisa-card">
+                <div class="coisa-numero">4</div>
+                <div class="coisa-titulo">Seu Cabelo</div>
+                <div class="coisa-texto">De todos os jeitos 🥹 - preto, loira, ruiva, liso, cacheado 😍❤️</div>
+            </div>
+
+            <div class="coisa-card">
+                <div class="coisa-numero">5</div>
+                <div class="coisa-titulo">Sua Força</div>
+                <div class="coisa-texto">A forma que você luta pelo que é seu, que aguenta muita coisa e ainda sorri ❤️</div>
+            </div>
+
+            <div class="coisa-card">
+                <div class="coisa-numero">6</div>
+                <div class="coisa-titulo">Seu Corpo</div>
+                <div class="coisa-texto">A mais gostosa e linda que eu já vi 😍 Simplesmente perfeita 🫣❤️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA DE FOTOS -->
+    <section id="fotos" class="fotos-section">
+        <h2 class="section-title">🌹 Nossos Momentos 🌹</h2>
+        <div class="fotos-container">
+            <div class="foto-card">
+                <div class="foto-imagem">📷</div>
+                <div class="foto-texto">Adicione uma foto aqui com um texto especial sobre este momento ❤️</div>
+            </div>
+            <div class="foto-card">
+                <div class="foto-imagem">📷</div>
+                <div class="foto-texto">Cada foto é uma memória do nosso amor crescendo a cada dia 💕</div>
+            </div>
+            <div class="foto-card">
+                <div class="foto-imagem">📷</div>
+                <div class="foto-texto">Você é meu maior tesouro, minha razão de sorrir ✨</div>
+            </div>
+            <div class="foto-card">
+                <div class="foto-imagem">📷</div>
+                <div class="foto-texto">Cada momento contigo é especial e inesquecível 🥹</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUSICAS SECTION -->
+    <section id="musicas" class="musicas-section">
+        <h2 class="section-title">🎵 Nossas Músicas 🎵</h2>
+        <div class="musicas-container">
+            <div class="musica-card" onclick="tocarMusica('sol-joao-maria')">
+                <div class="musica-icon">🎵</div>
+                <div class="musica-nome">Sol e João e Maria</div>
+                <div class="musica-artista">Clique para tocar o refrão 🎶</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARTA SECTION -->
+    <section id="carta" class="carta-section">
+        <h2 class="section-title">💌 Uma Carta Para Você</h2>
+        <div class="carta-container">
+            <div class="carta">
+                <div class="carta-header">
+                    <h2>Meu Amor ❤️</h2>
+                </div>
+                <div class="carta-body">
+                    <p>Hoje é um dia especial. Cinco meses se passaram desde que você entrou na minha vida e mudou tudo. Cada dia com você é uma bênção que eu não sabia que precisava.</p>
+                    <p>Você é meu amor, minha inspiração, minha razão de sorrir. Obrigado por ser você, por me escolher, por acreditar em nós. Cada momento contigo é inesquecível.</p>
+                    <p>Que venhamos a viver muitos anos juntos, criando histórias lindas e memórias que ficarão para sempre em nossos corações.</p>
+                    <p style="margin-top: 2rem;">
+                        <span class="assinatura">Com todo o meu amor,</span><br><br>
+                        <span class="assinatura">Seu amor ❤️</span>
+                    </p>
+                </div>
+                <div class="carta-footer">
+                    <p class="carta-data">5 de Setembro de 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TELA FINAL -->
+    <div class="tela-final" id="tela-final">
+        <div class="final-content">
+            <div class="final-titulo">Obrigado Por Tudo! ❤️</div>
+            <div class="final-texto">Você é meu amor, meu tudo 💕</div>
+            <div class="final-mensagem">❤️ Feliz Aniversário de 5 Meses ❤️</div>
+            <button class="botao-voltar" onclick="fecharTelaFinal()">Voltar ao Início</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>💕 Feito com muito amor para o meu grande amor 💕</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
