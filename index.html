@@ -478,7 +478,7 @@
 
         .foto-imagem {
             width: 100%;
-            height: 250px;
+            height: 280px;
             background: linear-gradient(135deg, #2d1a1f 0%, #1a1a1a 100%);
             display: flex;
             align-items: center;
@@ -547,6 +547,30 @@
         .musica-artista {
             color: var(--cor-texto-claro);
             font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .musica-botao {
+            background: linear-gradient(135deg, var(--cor-destaque) 0%, #ff1744 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
+            font-weight: 600;
+        }
+
+        .musica-botao:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(233, 30, 99, 0.5);
+        }
+
+        .audio-player {
+            margin-top: 1rem;
+            width: 100%;
         }
 
         /* ===== CARTA SECTION ===== */
@@ -566,7 +590,7 @@
             border: 3px solid var(--cor-destaque);
             border-radius: 20px;
             padding: 4rem;
-            max-width: 800px;
+            max-width: 900px;
             box-shadow: 0 20px 60px rgba(233, 30, 99, 0.3);
             position: relative;
             animation: cartaAppear 1s ease-out;
@@ -603,9 +627,9 @@
         }
 
         .carta-body p {
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
             text-align: justify;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .assinatura {
@@ -773,6 +797,14 @@
             .final-texto {
                 font-size: 1.5rem;
             }
+
+            .carta {
+                padding: 1.5rem;
+            }
+
+            .carta-body p {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -888,27 +920,39 @@
         <h2 class="section-title">🌹 Nossos Momentos 🌹</h2>
         <div class="fotos-container">
             <div class="foto-card">
-                <div class="foto-imagem">📸</div>
+                <div class="foto-imagem">
+                    <img src="https://i.imgur.com/aaa.jpg" alt="Foto 1" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%232d1a1f%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22%3E📸%3C/text%3E%3C/svg%3E'">
+                </div>
                 <div class="foto-texto">A nossa primeira foto juntos ❤️, a gente na área e você colando um monte de papel em mim 🥹, e de vez em quando a gente se beijava 🙈❤️</div>
             </div>
             <div class="foto-card">
-                <div class="foto-imagem">📸</div>
+                <div class="foto-imagem">
+                    <img src="https://i.imgur.com/bbb.jpg" alt="Foto 2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%232d1a1f%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22%3E📸%3C/text%3E%3C/svg%3E'">
+                </div>
                 <div class="foto-texto">Nois dois juntos no casamento ❤️, a foto tirada sem querer 😅, toda vez a gente sempre se olhando e a minha mão na sua coxa 🫠</div>
             </div>
             <div class="foto-card">
-                <div class="foto-imagem">📸</div>
+                <div class="foto-imagem">
+                    <img src="https://i.imgur.com/ccc.jpg" alt="Foto 3" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%232d1a1f%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22%3E📸%3C/text%3E%3C/svg%3E'">
+                </div>
                 <div class="foto-texto">A gente indo para o shopping juntos 🥰, eu com a sua camisa e você toda linda 😍❤️, um dos nossos últimos momentos juntos 💔🥀 (eu peguei tanto na sua bunda esse dia 🫣)</div>
             </div>
             <div class="foto-card">
-                <div class="foto-imagem">📸</div>
+                <div class="foto-imagem">
+                    <img src="https://i.imgur.com/ddd.jpg" alt="Foto 4" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%232d1a1f%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22%3E📸%3C/text%3E%3C/svg%3E'">
+                </div>
                 <div class="foto-texto">A gente se preparando para ir na casa do jairson 🥹, onde tudo começou ❤️, a gente brincando antes de ir 🫣, sem saber oq iria vim pela a frente 😍🥰</div>
             </div>
             <div class="foto-card">
-                <div class="foto-imagem">📸</div>
+                <div class="foto-imagem">
+                    <img src="https://i.imgur.com/eee.jpg" alt="Foto 5" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%232d1a1f%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22%3E📸%3C/text%3E%3C/svg%3E'">
+                </div>
                 <div class="foto-texto">A nossa foto de frente ao espelho ❤️, você toda linda e eu entrosando 😅, eu lembro até hoje de quando você me abraçou quando deu 00:00 ❤️</div>
             </div>
             <div class="foto-card">
-                <div class="foto-imagem">📸</div>
+                <div class="foto-imagem">
+                    <img src="https://i.imgur.com/fff.jpg" alt="Foto 6" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%232d1a1f%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22%3E📸%3C/text%3E%3C/svg%3E'">
+                </div>
                 <div class="foto-texto">A gente abraçados no sofá 🥹, nois dois cansados e bem juntinhos ❤️, eu lembro de quando a gente tava tentando achar alguma posição mais confortável 😅</div>
             </div>
         </div>
@@ -918,10 +962,23 @@
     <section id="musicas" class="musicas-section">
         <h2 class="section-title">🎵 Nossas Músicas 🎵</h2>
         <div class="musicas-container">
-            <div class="musica-card" onclick="tocarMusica('sol-joao-maria')">
+            <div class="musica-card">
                 <div class="musica-icon">🎵</div>
-                <div class="musica-nome">Sol e João e Maria</div>
-                <div class="musica-artista">Clique para tocar o refrão 🎶</div>
+                <div class="musica-nome">O Sol</div>
+                <div class="musica-artista">Victor Kley</div>
+                <button class="musica-botao" onclick="tocarMusica(0)">▶️ Ouvir</button>
+                <audio id="audio0" class="audio-player" controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="musica-card">
+                <div class="musica-icon">🎵</div>
+                <div class="musica-nome">João e Maria</div>
+                <div class="musica-artista">Chico Buarque</div>
+                <button class="musica-botao" onclick="tocarMusica(1)">▶️ Ouvir</button>
+                <audio id="audio1" class="audio-player" controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+                </audio>
             </div>
         </div>
     </section>
@@ -932,16 +989,34 @@
         <div class="carta-container">
             <div class="carta">
                 <div class="carta-header">
-                    <h2>Meu Amor ❤️</h2>
+                    <h2>Oi Meu Amor ❤️</h2>
                 </div>
                 <div class="carta-body">
-                    <p>Hoje é um dia especial. Cinco meses se passaram desde que você entrou na minha vida e mudou tudo. Cada dia com você é uma bênção que eu não sabia que precisava.</p>
-                    <p>Você é meu amor, minha inspiração, minha razão de sorrir. Obrigado por ser você, por me escolher, por acreditar em nós. Cada momento contigo é inesquecível.</p>
-                    <p>Que venhamos a viver muitos anos juntos, criando histórias lindas e memórias que ficarão para sempre em nossos corações.</p>
-                    <p style="margin-top: 2rem;">
-                        <span class="assinatura">Com todo o meu amor,</span><br><br>
-                        <span class="assinatura">Seu amor ❤️</span>
-                    </p>
+                    <p>Oi meu amor ❤️, aqui sou eu vida 🥹❤️.</p>
+                    <p>Eu finalmente consegui criar aquele site que eu te falei 🥳🤗, mas melhor ainda... De graça 😍.</p>
+                    <p>Ahhh meu amor ❤️, eu te amo tanto minha princesa ❤️👑.</p>
+                    <p>Eu consegui reunir vários momentos nossos 🥹, a gente juntos 🥰</p>
+                    <p>Eu tenho tanta saudades de nois vida 🥺💔, todo dia eu penso cada vez na gente ❤️‍🩹</p>
+                    <p>Eu vivo muito assombrado e com medo esses dias, de eu não consegui te ver 😩😭, de no final do ano não dá certo para a gente se ver dnv 😔🖤.</p>
+                    <p>Mas eu quero que você saiba vida 🥹🥺, eu sempre vou ser muito grato vida 🖤</p>
+                    <p>Por todos os nosso momentos, nossas brincadeiras, nossas brigas, eu te agradeço por tudo amor 🥹❤️</p>
+                    <p>Se realmente não for da vontade de Deus que a gente se veja e não continue mais junto 💔🥀</p>
+                    <p>Saiba que você foi a mulher que eu mais me senti feliz ❤️</p>
+                    <p>Obrigado por ter me cuidado, por ter ficado comigo apesar dos meus erros e defeitos... Apesar da distância e do tempo ❤️</p>
+                    <p>Eu sempre vou te amar minha princesa ❤️👑</p>
+                    <p>Eu vou tentar de tudo, vou dar o meu máximo nem que seja preciso eu dar 200% de mim ❤️</p>
+                    <p>Eu creio que a gente tem muita coisa para viver juntos e que isso é só o começo de tudo ❤️‍🩹</p>
+                    <p>Obrigado por cada momento vida ❤️</p>
+                    <p>Então vida 🥹❤️, obrigado por você está comigo até hoje ❤️, obrigado por sempre desabafar comigo e contar os seus momentos vida 🤗</p>
+                    <p>Eu amo cada detalhe seu, cada uma das duas fases, cada momento seu 🥹</p>
+                    <p>Eu amo quando você vira minha criancinha ❤️🤱</p>
+                    <p>Eu amo quando você virar minha mãe ❤️</p>
+                    <p>Eu amo quando você virar minha mulher ❤️🫣</p>
+                    <p>Essas são algumas palavras vida 🤗, mas não importa o tamanho do texto e quantas palavras eu dedique a você... Não existe dicionário e nem vocabulário que possa express o meu amor por você meu bem ❤️</p>
+                    <p>Muito obrigado por tudo minha princesa linda 😍❤️</p>
+                    <p>Eu te amo muito meu bebê 🥹❤️‍🩹</p>
+                    <p>Espero que você tenha gostado vida ❤️</p>
+                    <p><br><span class="assinatura">Feliz aniversário de 5 meses juntos amor ❤️🥰</span></p>
                 </div>
                 <div class="carta-footer">
                     <p class="carta-data">5 de Setembro de 2026</p>
